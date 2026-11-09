@@ -1,0 +1,3 @@
+- Creating a text group chat.
+- Divide work into clean sections.
+- Have group meetings as needed and before each deadline.
