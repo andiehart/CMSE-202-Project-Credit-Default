@@ -9,23 +9,51 @@
 -- URL: https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients
 
 3. Relevant Information:
-   The dataset contains variables and information of 30,000 clients in Taiwan. There are variables about demographics, credit limit, payment hisotry, and bill statement amounts. This dataset will be used to predict if clients will default on their credit card using various models.
+   The dataset contains variables and information of 30,000 clients in Taiwan. There are variables about demographics, credit limit, payment history, bill statement and payment amounts, and whether the client defaulted. This dataset will be used to predict if clients will default on their credit card using various models.
 
 4. Number of Instances: 30,000 (as of 25 January 2016)
 
-5. Number of Attributes: 23
+5. Number of Attributes: 23 explanatory variables, 1 response variable, 1 identification variable
 
 6. Attribute Information: 
    #   Attribute
    ------------------------
-   X1. ID - Identification Number
-   X2. SEX - 1 for Male, 2 for Female
-   X3. EDUCATION - 1 = graduate school; 2 = university; 3 = high school; 4 = others
+   ID: Identification Number
+   X1: LIMIT_BAL - amount of given credit (Taiwan Dollars)
+   X2: SEX - 1 for Male, 2 for Female
+   X3: EDUCATION - 1 = graduate school; 2 = university; 3 = high school; 4 = others
    X4: MARRIAGE - 1 = married; 2 = single; 3 = others
-   X5: AGE - year
-   X6: PAY_0 - repayment status in September, 2005
-   X7: PAY_2 - repyament status in August, 2005
-   X8:
-- X11: History of past payment. We tracked the past monthly payment records (from April to September, 2005) as follows: X6 = the repayment status in September, 2005; X7 = the repayment status in August, 2005; . . .;X11 = the repayment status in April, 2005. The measurement scale for the repayment status is: -1 = pay duly; 1 = payment delay for one month; 2 = payment delay for two months; . . .; 8 = payment delay for eight months; 9 = payment delay for nine months and above.
+   X5: AGE - age in years
+-- X6 - X11 tracks history of past payment. -1 = pay duly; 1 = payment delay for one month; 2 = payment delay for two months
+   X6: PAY_0 - repayment status in September, 2005 
+   X7: PAY_2 - repayment status in August, 2005
+   X8: PAY_3 - repayment status in July, 2005
+   X9: PAY_4 - repayment status in June, 2005
+   X10: PAY_5 - repayment status in May, 2005
+   X11: PAY_6 - repayment status in April, 2005
+-- X12 - X17 tracks the amount of bill statement in Taiwan Dollars
+   X12: BILL_AMT1 - bill statement amount in September, 2005
+   X13: BILL_AMT2 - bill statement amount in August, 2005
+   X14: BILL_AMT3 - bill statement amount in July, 2005
+   X15: BILL_AMT4 - bill statement amount in June, 2005
+   X16: BILL_AMT5 - bill statement amount in May, 2005
+   X17: BILL_AMT6 - bill statement amount in April, 2005
+-- X18 - X23 tracks the amount of payment made towards a previous month's statement in Taiwan Dollars
+   X18: PAY_AMT1 - payment amount made in September, 2005
+   X19: PAY_AMT2 - payment amount made in August, 2005
+   X20: PAY_AMT3 - payment amount made in July, 2005
+   X21: PAY_AMT4 - payment amount made in June, 2005
+   X22: PAY_AMT5 - payment amount made in May, 2005
+   X23: PAY_AMT6 - payment amount made in April, 2005
+   Y: Default payment next month - 0 = No (no default); 1 = Yes (Default)
 
+7. Missing Attribute Values: 0
 
+8. Class Distribution:
+   No Default (0): 23,364 (77.88%)
+   Default (1): 6,636 (22.12%)
+
+9. Citation:
+   Yeh, I. (2009). Default of Credit Card Clients [Dataset].
+   UCI Machine Learning Repository.
+   https://doi.org/10.24432/C55S3H
